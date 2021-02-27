@@ -1,0 +1,7 @@
+allprojects {
+    group = 'pt.ipb.gsr'
+    version = "${version}"
+    repositories {
+        mavenCentral()
+    }
+}
