@@ -2,3 +2,6 @@ rootProject.name = 'Distributed Systems Classes'
 
 include 'ds-intro'
 include 'ds-threads'
+include 'ds-communication'
+include 'ds-web'
+include 'ds-coordination'
