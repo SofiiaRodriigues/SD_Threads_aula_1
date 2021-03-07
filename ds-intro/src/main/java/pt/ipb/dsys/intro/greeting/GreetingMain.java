@@ -12,10 +12,15 @@ public class GreetingMain {
         spg.sayGoodMorning();
         spg.sayGoodEvening();
 
-        GoodMorning spGm = new SpanishGreeter();
-        spGm.sayGoodMorning();
-        GoodEvening spGe = new SpanishGreeter();
-        spGe.sayGoodEvening();
+        SpanishGreeter greeter = new SpanishGreeter();
+        greeter.sayGoodMorning();
+        greeter.sayGoodEvening();
+
+        // SpanishGreeter is also of type GoodMorning and GoodEvening
+        GoodMorning sgm = greeter;
+        sgm.sayGoodMorning();
+        GoodEvening sge = greeter;
+        sge.sayGoodEvening();
     }
 
 }
