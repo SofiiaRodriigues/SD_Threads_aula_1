@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Intro" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="pt.ipb.dsys.intro.Intro" />
+  <configuration default="false" name="[Intro] HelloMain" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="pt.ipb.dsys.intro.hello.HelloMain" />
     <module name="Distributed_Systems_Classes.ds-intro.main" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="pt.ipb.dsys.intro.*" />
+        <option name="PATTERN" value="pt.ipb.dsys.intro.hello.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
