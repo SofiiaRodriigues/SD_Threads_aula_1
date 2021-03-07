@@ -2,6 +2,3 @@ rootProject.name = 'Distributed Systems Classes'
 
 include 'ds-intro'
 include 'ds-threads'
-
-project(':ds-intro').name = 'Java Introduction'
-project(':ds-threads').name = 'Threads'
