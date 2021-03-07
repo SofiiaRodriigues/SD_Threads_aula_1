@@ -1,7 +1,12 @@
 rootProject.name = 'Distributed Systems Classes'
 
 include 'ds-intro'
+project(':ds-intro').name = '1 - Java Introduction'
 include 'ds-threads'
+project(':ds-threads').name = '2 - Java Threads'
 include 'ds-communication'
+project(':ds-communication').name = '3 - Communcation'
 include 'ds-web'
+project(':ds-web').name = '4 - Web'
 include 'ds-coordination'
+project(':ds-coordination').name = '5 - Distributed Coordination'
