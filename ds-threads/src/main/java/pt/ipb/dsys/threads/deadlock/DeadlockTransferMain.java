@@ -1,4 +1,4 @@
-package pt.ipb.dsys.threads.deadlock.account;
+package pt.ipb.dsys.threads.deadlock;
 
 public class DeadlockTransferMain {
 
