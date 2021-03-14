@@ -10,4 +10,12 @@ public abstract class SD {
         }
     }
 
+    public static void wait(Object target) {
+        try {
+            target.wait();
+        } catch (InterruptedException ignore) {
+            // don't care
+        }
+    }
+
 }
