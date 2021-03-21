@@ -16,11 +16,13 @@ public class SocketServerMain {
     public static void main(String[] args) {
 
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            System.out.printf("Waiting for connection on port %d\n", SocketServerMain.PORT);
             try (Socket clientSocket = serverSocket.accept()) {
-                try (BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
+                System.out.printf("[%s:%d] connected!\n", clientSocket.getInetAddress().getHostName(), clientSocket.getPort());
+                try (BufferedReader input = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
                     String inputLine;
-                    while ((inputLine = in.readLine()) != null) {
-                        JOptionPane.showMessageDialog(null, inputLine, "SERVIDOR", JOptionPane.INFORMATION_MESSAGE);
+                    while ((inputLine = input.readLine()) != null) {
+                        JOptionPane.showMessageDialog(null, inputLine, "SERVER", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
             }
