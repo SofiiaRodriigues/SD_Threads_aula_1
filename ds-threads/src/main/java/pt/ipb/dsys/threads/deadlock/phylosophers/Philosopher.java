@@ -1,4 +1,4 @@
-package pt.ipb.dsys.threads.phylosophers;
+package pt.ipb.dsys.threads.deadlock.phylosophers;
 
 import pt.ipb.dsys.threads.util.SD;
 
