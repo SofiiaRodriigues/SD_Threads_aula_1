@@ -1,4 +1,4 @@
-package pt.ipb.dsys.threads.deadlock;
+package pt.ipb.dsys.threads.deadlock.transfer;
 
 import pt.ipb.dsys.threads.util.SD;
 

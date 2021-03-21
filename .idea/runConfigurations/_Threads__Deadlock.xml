@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="[Threads] Deadlock" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="pt.ipb.dsys.threads.deadlock.DeadlockTransferMain" />
+    <option name="MAIN_CLASS_NAME" value="pt.ipb.dsys.threads.deadlock.transfer.DeadlockTransferMain" />
     <module name="Distributed_Systems_Classes.ds-threads.main" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="pt.ipb.dsys.threads.deadlock.*" />
+        <option name="PATTERN" value="pt.ipb.dsys.threads.deadlock.transfer.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
