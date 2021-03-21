@@ -1,4 +1,4 @@
-package pt.ipb.dsys.threads.workspace.intro;
+package pt.ipb.dsys.com.intro;
 
 import javax.swing.*;
 import java.io.BufferedReader;

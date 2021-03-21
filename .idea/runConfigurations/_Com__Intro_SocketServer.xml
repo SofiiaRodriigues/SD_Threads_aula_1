@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="[Com] Intro SocketServer" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="pt.ipb.dsys.threads.workspace.intro.SocketServerMain" />
+    <option name="MAIN_CLASS_NAME" value="pt.ipb.dsys.com.intro.SocketServerMain" />
     <module name="Distributed_Systems_Classes.ds-communication.main" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="pt.ipb.dsys.threads.workspace.intro.*" />
+        <option name="PATTERN" value="pt.ipb.dsys.com.intro.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
