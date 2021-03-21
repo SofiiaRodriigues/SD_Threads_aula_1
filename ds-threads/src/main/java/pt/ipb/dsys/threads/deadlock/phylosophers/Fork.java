@@ -1,4 +1,4 @@
-package pt.ipb.dsys.threads.phylosophers;
+package pt.ipb.dsys.threads.deadlock.phylosophers;
 
 import java.util.concurrent.locks.ReentrantLock;
 
