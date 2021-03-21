@@ -39,19 +39,20 @@ public class Account {
         List<Account> accountList = Arrays.asList(from, to);
         accountList.sort(Comparator.comparing(Account::getNumber));
 
-        internalTransfer(accountList.get(0), accountList.get(1), amount);
+        internalTransfer(accountList.get(0), accountList.get(1), amount, from);
     }
 
     static void transfer(Account from, Account to, double amount) {
         SD.sleep(10);
-        internalTransfer(from, to, amount);
+        internalTransfer(from, to, amount, from);
     }
 
-    private static void internalTransfer(Account from, Account to, double amount) {
-        synchronized (from) {
-            System.out.printf("Acquired lock for account %d, waiting for lock for %d\n", from.getNumber(), to.getNumber());
-            synchronized (to) {
-                System.out.printf("Acquired lock for account %d\n", to.getNumber());
+    private static void internalTransfer(Account lock1, Account lock2, double amount, Account from) {
+        synchronized (lock1) {
+            System.out.printf("Acquired lock for account %d, waiting for lock for %d\n", lock1.getNumber(), lock2.getNumber());
+            synchronized (lock2) {
+                System.out.printf("Acquired lock for account %d\n", lock2.getNumber());
+                Account to = lock1 == from ? lock2 : lock1;
                 from.withdraw(amount);
                 to.deposit(amount);
                 System.out.printf("Transfered %.2f from %d to %d\n", amount, from.getNumber(), to.getNumber());
