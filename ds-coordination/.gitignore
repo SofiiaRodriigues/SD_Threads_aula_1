@@ -1,0 +1,3 @@
+!src/main/java/pt/ipb/dsys/coordination/workspace
+src/main/java/pt/ipb/dsys/coordination/workspace/*
+!src/main/java/pt/ipb/dsys/coordination/workspace/.gitkeep
