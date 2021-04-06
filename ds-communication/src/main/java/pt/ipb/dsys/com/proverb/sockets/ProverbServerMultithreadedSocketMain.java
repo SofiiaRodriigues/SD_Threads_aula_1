@@ -51,6 +51,12 @@ public class ProverbServerMultithreadedSocketMain implements Runnable {
             }
         } catch (IOException e) {
             System.out.printf("IO Error: %s\n", e.getMessage());
+        } finally {
+            try {
+                clientSocket.close();
+            } catch (IOException e) {
+                // don't care
+            }
         }
     }
 }
