@@ -17,6 +17,9 @@ public class ProverbProtocol {
 
 	public String processInput(String theInput) {
 		String theOutput = null;
+		if(theInput==null) {
+			theInput = "";
+		}
 		if (state == WAITING) {
 			theOutput = "Are you ready?";
 			state = SENTPRONTO;
