@@ -1,0 +1,25 @@
+version: '3'
+services:
+  rmi-cpu-provider:
+    image: openjdk:11
+    container_name: rmi-cpu-provider
+    ports:
+      - 1099:1099
+    networks:
+      - rmi-cpu-network
+    volumes:
+      - ./app:/app
+    command: java -Djava.rmi.server.useCodebaseOnly=false -Djava.security.policy=/app/provider.policy -jar /app/rmi-cpu-provider-1.0.0.jar
+
+  rmi-cpu-client:
+    image: openjdk:11
+    container_name: rmi-cpu-client
+    networks:
+      - rmi-cpu-network
+    volumes:
+      - ./app:/app
+    command: java -Djava.rmi.server.codebase=file:///app/rmi-cpu-client-1.0.0.jar -Djava.security.policy=/app/client.policy -jar /app/rmi-cpu-client-1.0.0.jar rmi-cpu-provider
+
+networks:
+  rmi-cpu-network:
+    driver: bridge

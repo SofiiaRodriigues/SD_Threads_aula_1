@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="[Com] RMI Cpu Client" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="pt.ipb.dsys.com.rmi.cpu.client.CpuClientMain" />
+    <module name="Distributed_Systems_Classes.ds-communication.main" />
+    <option name="PROGRAM_PARAMETERS" value="localhost" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="pt.ipb.dsys.com.rmi.cpu.client.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
