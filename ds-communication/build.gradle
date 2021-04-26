@@ -2,6 +2,13 @@ plugins {
     id 'java'
 }
 
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 task rmiCpuClientJar(type: Jar, dependsOn: classes) {
     manifest {
         attributes 'Main-Class': 'pt.ipb.dsys.com.rmi.cpu.client.CpuClientMain'
@@ -29,4 +36,6 @@ task rmiCpuProviderJar(type: Jar, dependsOn: classes) {
 }
 
 dependencies {
+    implementation 'org.apache.activemq:activemq-client:5.16.1'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
 }
