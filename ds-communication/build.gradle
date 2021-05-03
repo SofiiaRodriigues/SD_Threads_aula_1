@@ -13,7 +13,7 @@ task rmiCpuClientJar(type: Jar, dependsOn: classes) {
     manifest {
         attributes 'Main-Class': 'pt.ipb.dsys.com.rmi.cpu.client.CpuClientMain'
     }
-    destinationDirectory = file("$project.projectDir/docker/rmi/cpu/app")
+    destinationDirectory = file("$project.projectDir/docker/solution/rmi/cpu/app")
     archiveBaseName = 'rmi-cpu-client'
     archiveVersion = project.version
     from(sourceSets.main.output) {
@@ -26,7 +26,7 @@ task rmiCpuProviderJar(type: Jar, dependsOn: classes) {
     manifest {
         attributes 'Main-Class': 'pt.ipb.dsys.com.rmi.cpu.provider.CpuProviderMain'
     }
-    destinationDirectory = file("$project.projectDir/docker/rmi/cpu/app")
+    destinationDirectory = file("$project.projectDir/docker/solution/rmi/cpu/app")
     archiveBaseName = 'rmi-cpu-provider'
     archiveVersion = project.version
     from(sourceSets.main.output) {

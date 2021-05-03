@@ -1,0 +1,20 @@
+version: '3'
+services:
+  queues-amq:
+    # image: rmohr/activemq:5.15.9
+    image: lflobo/activemq:5.15.9
+    container_name: amq
+    networks:
+      - amq-network
+    volumes:
+      - queues-amq-data:/opt/activemq/data
+    ports:
+      - 61616:61616
+      - 8161:8161
+
+volumes:
+  queues-amq-data: {}
+
+networks:
+  amq-network:
+    driver: bridge
