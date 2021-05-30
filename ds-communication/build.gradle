@@ -28,5 +28,13 @@ task rmiCpuProviderJar(type: Jar, dependsOn: classes) {
     }
 }
 
+jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 dependencies {
+    implementation 'com.google.guava:guava:30.1.1-jre'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
 }
