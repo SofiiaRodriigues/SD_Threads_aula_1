@@ -2,13 +2,6 @@ plugins {
     id 'java'
 }
 
-jar {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
-
 task rmiCpuClientJar(type: Jar, dependsOn: classes) {
     manifest {
         attributes 'Main-Class': 'pt.ipb.dsys.com.rmi.cpu.client.CpuClientMain'
@@ -32,6 +25,12 @@ task rmiCpuProviderJar(type: Jar, dependsOn: classes) {
     from(sourceSets.main.output) {
         include 'pt/ipb/dsys/com/rmi/cpu/provider/**'
         include 'pt/ipb/dsys/com/rmi/cpu/common/**'
+    }
+}
+
+jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
 
