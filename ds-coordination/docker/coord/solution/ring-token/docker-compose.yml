@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  ring-gossip-router:
+    image: openjdk:11
+    container_name: ring-gossip-router
+    networks:
+      - peerbox-network
+    ports:
+      - 12001:12001
+    volumes:
+      - ../../../../build/libs:/app
+    command: java -cp /app/ds-coordination-1.0.0.jar org.jgroups.stack.GossipRouter -port 12001
+
+  ring-token-node:
+    image: openjdk:11
+    scale: 5 # spawns 5 instance of this service
+    networks:
+      - peerbox-network
+    volumes:
+      - ../../../../build/libs:/app
+      - ../../../../src/main/resources/:/resources
+    command: java -Dlogback.configurationFile=/resources/logback.xml -cp /app/ds-coordination-1.0.0.jar pt.ipb.dsys.coordination.ring.RingTokenMain
+
+networks:
+  peerbox-network:
+    driver: bridge
