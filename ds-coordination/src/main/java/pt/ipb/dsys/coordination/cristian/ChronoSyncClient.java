@@ -29,7 +29,7 @@ public class ChronoSyncClient {
                 socket.receive(inputPacket);
 
                 byte[] inputData = inputPacket.getData();
-                long serverTime = pt.ipb.dsys.coord.chrono.ByteUtils.bytesToLong(inputData);
+                long serverTime = ByteUtils.bytesToLong(inputData);
                 long elapsed = System.currentTimeMillis() - checkpoint;
                 long delay = elapsed / 2;
 
