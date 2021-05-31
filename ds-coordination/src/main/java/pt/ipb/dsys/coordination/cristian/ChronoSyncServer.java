@@ -25,7 +25,7 @@ public class ChronoSyncServer {
                         socket.receive(packet);
                         System.out.printf("sync packet received from %s:%d\n", packet.getAddress().getHostAddress(), packet.getPort());
 
-                        byte[] dataBuffer = pt.ipb.dsys.coord.chrono.ByteUtils.longToBytes(chronometer.getCurrent());
+                        byte[] dataBuffer = ByteUtils.longToBytes(chronometer.getCurrent());
                         System.out.printf("sending packet (%d bytes) to %s:%d -> current is %d\n", dataBuffer.length, packet.getAddress().getHostAddress(), packet.getPort(), chronometer.getCurrent());
                         DatagramPacket response = new DatagramPacket(dataBuffer, dataBuffer.length, packet.getAddress(), packet.getPort());
                         socket.send(response);
